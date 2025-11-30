@@ -121,7 +121,7 @@ kubectl expose pod my-sql --type=ClusterIP \
 
 Tworzą usługi dla wszystkich komponentów.
 
-# 8. NetworkPolicy (backend może → mysql, frontend nie)
+# 8. NetworkPolicy
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.k8s.io/v1
