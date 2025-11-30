@@ -53,8 +53,9 @@ EOF
 
 ```
 Tworzy deployment frontend na node=frontend.
-```
+
 # 5. Deployment backend (1 replika)
+```
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
