@@ -12,19 +12,22 @@ minikube start \
 Start klastra z Calico i 3 nodami: master + 2 workery.
 
 # 2. Sprawdzenie nodów
+```
 kubectl get nodes -o wide
-
+```
 Weryfikacja, czy wszystkie nody są w stanie Ready.
 <img width="1483" height="118" alt="image" src="https://github.com/user-attachments/assets/367d94d9-db2a-4390-b1b3-7dc0bb3aa432" />
 
 # 3. Nadanie etykiet nodom (A,B,C)
+```
 kubectl label node minikube-m02 node=frontend
 kubectl label node minikube-m03 node=backend
 kubectl label node minikube node=mysql
-
+```
 Przypisanie ról: frontend, backend, mysql.
 
 # 4. Deployment frontend (3 repliki)
+```
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -47,7 +50,7 @@ spec:
         image: nginx
 EOF
 
-
+```
 Tworzy deployment frontend na node=frontend.
 
 # 5. Deployment backend (1 replika)
